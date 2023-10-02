@@ -67,9 +67,27 @@ index.js
     -Fragment - let's us group elements without adding extra nodes
 
 ```js
+    return <React.Fragment>....return something...</React.Fragment>
 
+    // shorthand
+
+    return <>....return something...</>
 ```
 
+ -className instead of class
+
+ ```js
+    return <div className="class">hi</div>
+ ```
+
+ - close every element
+
+ ```js
+    return <img />
+    return <input /> 
+ ```
+
+ 
 
 ```js
 
