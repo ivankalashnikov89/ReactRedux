@@ -87,7 +87,25 @@ index.js
     return <input /> 
  ```
 
- 
+
+ ##### Nest Components
+
+ ```js
+    function Greeting() {
+        return (
+            <div>
+                <Person />
+                <Message />
+            </div>
+        );
+    }
+
+const Person = () => <h2>John</h2>;
+const Message = () => {
+    return <p>Message</p>
+}
+
+ ```
 
 ```js
 
