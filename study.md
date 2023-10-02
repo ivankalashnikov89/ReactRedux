@@ -44,6 +44,20 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting/>)
 ```
 
+##### First Component in detail
+
+-capital letter
+-must return something
+-JSX syntax(return html)
+    -to make our live easier
+    -calling function under the hood
+
+index.js
+
+
+
+
+
 
 ```js
 
