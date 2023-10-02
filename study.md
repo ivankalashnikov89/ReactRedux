@@ -54,9 +54,21 @@ root.render(<Greeting/>)
 
 index.js
 
+```js
+    const Greeting = () => {
+        return React.createElement('h2',{},'hello')
+    }
+```
 
+##### JSX Rules
 
+-return single element
+    -semantic section/article
+    -Fragment - let's us group elements without adding extra nodes
 
+```js
+
+```
 
 
 ```js
