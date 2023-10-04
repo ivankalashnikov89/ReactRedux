@@ -107,6 +107,20 @@ const Message = () => {
 
  ```
 
+##### Props - Initial Setup
+
+ - refactor / clean up
+
+ ```js
+ const author = "JRRTolkien";
+ const title = "The Lord of the Rings";
+
+function Booklist() {
+    return 
+}
+ ```
+
+
 ```js
 
     const App = () => {
