@@ -115,8 +115,13 @@ const Message = () => {
  const author = "JRRTolkien";
  const title = "The Lord of the Rings";
 
-function Booklist() {
-    return 
+function Book() {
+    return (
+        <article className = "class_name">
+            <h2>{title}</h2>
+            <h4>{author}</h4>
+        </article>
+    )
 }
  ```
 
