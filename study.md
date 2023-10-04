@@ -127,7 +127,11 @@ function Book() {
 
 ##### Props - Somewhat Dynamic Setup
 
-
+- setup an object
+- refactor vars to properties
+- copy/paste and rename
+- get values for second book
+- setup props
 
 ```js
 
