@@ -125,6 +125,9 @@ function Book() {
 }
  ```
 
+##### Props - Somewhat Dynamic Setup
+
+
 
 ```js
 
