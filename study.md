@@ -133,6 +133,18 @@ function Book() {
 - get values for second book
 - setup props
 
+```js 
+    const firstBook = {
+        author:"JRR Tolkien",
+        title:"Silmarillion"
+    };
+    const secondBook = {
+        author:"J Rowling",
+        title:"Harry Potter"
+    }
+
+```
+
 ```js
 
     const App = () => {
