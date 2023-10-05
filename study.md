@@ -179,15 +179,103 @@ function Book() {
 
 
 
+##### Mapping
 
-
-
-
+- map - creates a new array from calling a function for every array element
 
 ```js
+    const names = ["Ivan", "Alex", "Denis"]
+    const newNames = names.map((name => {
+        return <h1>{name}</h1>
+    }));
 
-    const App = () => {
-        return "Hello React";
+    function BookList() {
+        return <section>{newNames}</section>
     }
+```
 
+##### Pass the entire object
+
+- render component
+- pass entire object
+- destructuring(object)
+
+```js
+    function BookList() {
+        return (
+            <section className = "className">
+                {books.map((book) => {
+                    const {title, author} = book;
+                    return <Book book = {book}>
+                })}
+            </section>
+        )
+    }
+```
+
+
+##### EVENT - FUNDAMENTALS #####
+
+- Vanilla JS
+
+```js
+    const btn = document.querySelector("#btn");
+
+    btn.addEventListener('click', function(e) {
+        //do something
+    })
+```
+
+- similar approach
+- element, event, function
+- again camelCase
+
+```js
+    const handleClick = () => {
+        alert("button clicked!")
+    };
+    return  (
+        <section>
+            <button onClick = {handleClick}>Click</button>
+        </section>
+    )
+```
+
+- [React Events] (https://reactjs.org/docs/events.html)
+- no need to memorize 
+- most common 
+    - onClick(click events)
+    - onSubmit(submit form)
+    - onChange(input change)
+
+```js
+    function BookList() {
+        return (
+            <section>
+                <EventExamples />
+            </section>
+        )
+
+        const EventExamples = () => {
+            const handleFormInput = () => {
+                console.log("handle form input")
+            };
+            const handleButtonClick = () => {
+                alert("handle button click");
+            };
+
+            return (
+                <section>
+                    <form>
+                        <input 
+                            type = "text"
+                            name = "example"
+                            onChange = {handleFormInput}
+                        />
+                    </form>
+                    <button onClick = {handleButtonClick}>Click</button>
+                </section>
+            );
+        };
+    };
 ```
