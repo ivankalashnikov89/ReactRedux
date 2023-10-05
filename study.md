@@ -299,8 +299,19 @@ function Book() {
         };
         return (
             <section>
-                
+                {/*add onSubmit event Handler*/}
+                <form onSubmit = {handleFormSubmission}>
+                    <input 
+                        type = "text"
+                        name = "example"
+                        onChange = {handleFormInput}
+                    />
+                 <button type = "submit">Submit Form</button>   
+                </form>
+                <button onClick = {nahdleButtonClick}>Click</button>
             </section>
-        )
-    }
+        );
+    };
 ```
+
+##### MIND GRENADE #####
