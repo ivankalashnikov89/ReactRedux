@@ -143,7 +143,46 @@ function Book() {
         title:"Harry Potter"
     }
 
+    const BookList = () => {
+        return (
+            <section className = "className">
+                <Book
+                    author = {firstBook.author}
+                    title = {firstBook.title}
+                />
+                <Book
+                    author = {srcondBook.author}
+                    title = {secondBook.title}
+                />
+            </section>
+        );
+    };
+
+    const Book = (props) => {
+        return (
+            <article className = "className">
+                <h2>{props.title}</h2>
+                <h3>{props.author}</h3>
+            </article>
+        );
+    };
+
 ```
+
+
+##### Children Prop
+
+- everything we render between compnent tags
+- during the course we will mostly use it Context API
+- special prop, has to be 'children'
+- can place anywhere in JSX
+
+
+
+
+
+
+
 
 ```js
 
