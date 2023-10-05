@@ -279,3 +279,28 @@ function Book() {
         };
     };
 ```
+
+
+##### EVENT OBJECT AND FORM SUBMISSION #####
+
+```js
+    const EventExamples = () => {
+        const handleFormInput = (e) => {
+            //e.target - element
+            console.log(`Input Name : ${e.target.name}`);
+            console.log(`Input Value : ${e.target.value}`);
+        
+        };
+        const handleButtonClick = () => {
+            alert("clicked");
+        };
+        const handleFormSubmission = (e) => {
+            console.log("submitted");
+        };
+        return (
+            <section>
+                
+            </section>
+        )
+    }
+```
