@@ -330,8 +330,35 @@ function Book() {
     };
 ```
 
-- also can accesss event object
+##### MIND GRENADE #2 #####
+
+- remove EventExamples
+- components are Independent by default
 
 ```js
+    function BookList() {
+        return (
+            <section>
+                {books.map((book) => {
+                    return <Book {...book} key = {book.id}>
+                })}
+            </section>
+        );
+    }
 
+    const Book = (props) => {
+        const {img, title, author} = props;
+        const displayTitle = () => {
+            console.log(title);
+        };
+    
+
+    return (
+        <article>
+            <h2>{title}</h2>
+            <button onClick={displayTitle}>display title</button>
+            <h4>{author}</h4>
+        </artice>
+        );
+    };
 ```
