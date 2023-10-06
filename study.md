@@ -315,3 +315,23 @@ function Book() {
 ```
 
 ##### MIND GRENADE #####
+
+- alternative approach
+- pass anonymous function (in this case arrow function)
+- one liner-less code
+
+```js
+    const EventExample = () => {
+        return (
+            <section>
+                <button onClick = {() => console.log("hello")}>Click</button>
+            </section>
+        );
+    };
+```
+
+- also can accesss event object
+
+```js
+
+```
