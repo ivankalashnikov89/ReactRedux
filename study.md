@@ -1,6 +1,6 @@
 ##### MY REACT AND REDUC TOOLKIT JOURNEY
 
-##### First Component
+##### FIRST COMPONENT #####
 
 ```js
     function Greeting() {
@@ -17,7 +17,7 @@
 -must return JSX(html)
 -always close tag <Greeting/>
 
-##### Typical Component
+##### TYPICAL COMPONENT #####
 
 ```js
 // imports or logic
@@ -27,7 +27,7 @@
     export default Greeting;
 ```
 
-##### Root Component(only one)
+##### ROOT COMPONENT (ONLY ONE) #####
 
 index.js
 
@@ -44,7 +44,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<Greeting/>)
 ```
 
-##### First Component in detail
+##### FIRST COMPONENT IN DETAIL #####
 
 -capital letter
 -must return something
@@ -60,7 +60,7 @@ index.js
     }
 ```
 
-##### JSX Rules
+##### JSX RULES #####
 
 -return single element
     -semantic section/article
@@ -88,8 +88,7 @@ index.js
  ```
 
 
- ##### Nest Components
-
+ ##### NEST COMPONENTS #####
  ```js
     function Greeting() {
         return (
@@ -107,7 +106,7 @@ const Message = () => {
 
  ```
 
-##### Props - Initial Setup
+##### PROPS - INITIAL SETUP #####
 
  - refactor / clean up
 
@@ -125,7 +124,7 @@ function Book() {
 }
  ```
 
-##### Props - Somewhat Dynamic Setup
+##### PROPS - SOMEWHAT DYNAMIC SETUP #####
 
 - setup an object
 - refactor vars to properties
@@ -170,7 +169,7 @@ function Book() {
 ```
 
 
-##### Children Prop
+##### CHILDREN PROP #####
 
 - everything we render between compnent tags
 - during the course we will mostly use it Context API
@@ -179,7 +178,7 @@ function Book() {
 
 
 
-##### Mapping
+##### MAPPING #####
 
 - map - creates a new array from calling a function for every array element
 
@@ -194,7 +193,7 @@ function Book() {
     }
 ```
 
-##### Pass the entire object
+##### PASS THE ENTIRE OBJECT #####
 
 - render component
 - pass entire object
