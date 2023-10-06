@@ -362,3 +362,39 @@ function Book() {
         );
     };
 ```
+
+
+##### PROP DRILLING #####
+
+- react data flow - can only pass props dows
+- alternatives Context API, redux, other state libraries
+
+```js
+    function BookList() {
+        const someValue = "shakeAndBake";
+        const displayValue = () => {
+            console.log(someValue);
+        };
+        return (
+            <section>
+                {books.map((book) => {
+                    return <Book {...book} key ={book.id} displayValue = {displayValue}>
+                })}
+            </section>
+        );
+    }
+
+    const Book = (props) => {
+        const {title, author, displayValue} = props;
+
+        return (
+            <article>
+                <h2>{title}</h2>
+                <button onClick={displayValue}>Click</button>
+                <h4>{author}</h4>
+            </article>
+        );
+    };
+```
+
+##### MORE COMPLEX EXAMPLE #####
