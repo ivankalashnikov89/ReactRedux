@@ -442,5 +442,13 @@ function Book() {
 - set image property equal to import
 
 ```js
-    
+    import img1 from './images/book1.jpg';
+    export const books = {
+        author:'JRRTolkien',
+        title:'The Lord of the Rings',
+        img:img1
+    }
 ```
+
+
+###### ##### ##### ADVANCED REACT ##### ##### #####
