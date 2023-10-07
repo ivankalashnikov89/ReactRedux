@@ -426,8 +426,21 @@ function Book() {
         const {author, title, getBook} = props;
         return (
             ....
-            <button onClick = {getBook}>Click Me</button>
+            <button onClick = {getBook(id)}>Click Me</button>
             ....
         );
     };
+```
+
+##### LOCAL IMAGES (SRC FOLDER) #####
+
+- better performance because optimized 
+- add one more book to array
+- downlaod all three images (rename)
+- setup images folder in the src
+- import all three images in the books.js
+- set image property equal to import
+
+```js
+    
 ```
