@@ -397,3 +397,15 @@ function Book() {
 ```
 
 ##### MORE COMPLEX EXAMPLE #####
+
+- Initial setup
+- Create getBook function in bookList
+- accepts is as an argument and finds the book
+- pass function down to Book Component and invoke on the button click
+- in the Book Component destructure id and function 
+- invoke the function when user clicks the button, pass the id
+- the goal: you should see the same book in the console
+
+```js
+    
+```
