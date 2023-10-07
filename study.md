@@ -400,12 +400,34 @@ function Book() {
 
 - Initial setup
 - Create getBook function in bookList
-- accepts is as an argument and finds the book
+- accepts id as an argument and finds the book
 - pass function down to Book Component and invoke on the button click
 - in the Book Component destructure id and function 
 - invoke the function when user clicks the button, pass the id
 - the goal: you should see the same book in the console
 
 ```js
-    
+    const BookList = () => {
+        const getBook = (id) => {
+            const book = books.find((book) => book.id === id);
+            console.log(book)
+        };
+
+        return (
+            <section>
+                {books.map((book) => {
+                    return <Book getBook = {getBook} />
+                })} 
+            </section>
+        );
+    };
+
+    const Book = (props) => {
+        const {author, title, getBook} = props;
+        return (
+            ....
+            <button onClick = {getBook}>Click Me</button>
+            ....
+        );
+    };
 ```
