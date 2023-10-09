@@ -476,3 +476,25 @@ function Book() {
 - accepts default value as an argument 
 - state update triggers re-render
 
+```js
+    const [count, setCount] = useState(0);
+
+    const handleClick = () => {
+        setCount(count + 1)
+    };
+
+    .....
+
+    <button onClick = {handleClick}>Click me</button>
+```
+
+##### General Rules of Hooks #####
+
+- starts with 'use' 
+- component must be uppercase
+- invoke inside function/component body
+- don't call hooks conditionally
+- set functions don't update state immediately 
+
+##### useState with Array #####
+
