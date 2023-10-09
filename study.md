@@ -498,3 +498,19 @@ function Book() {
 
 ##### useState with Array #####
 
+##### useState with Object #####
+
+```js
+    const UseStateObject = () => {
+        const [name, setName] = useState("Ivan");
+        const [age, setAge] = useState(33);
+        const [hobby, setHobby] = useState("Hockey")
+    }
+
+    const displayAlex = () => {
+        setName("Alex");
+        setAge(37);
+        setHobby("Simpsons")
+    }
+```
+
