@@ -452,3 +452,13 @@ function Book() {
 
 
 ###### ##### ##### ADVANCED REACT ##### ##### #####
+
+##### The Need for State #####
+
+- create count variable
+- display value in the JSX
+- add button and increase the value
+
+```js
+    
+```
