@@ -460,5 +460,19 @@ function Book() {
 - add button and increase the value
 
 ```js
-    
+    const ErrorExample = () => {
+        let count = 0;
+
+        const handleClick = () => {
+            count = count + 1;
+        }
+    }
 ```
+
+##### useState Basics #####
+
+- useState Hook
+- returns an array with two elements: current state value, and a function that we can use to update the state
+- accepts default value as an argument 
+- state update triggers re-render
+
