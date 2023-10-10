@@ -544,3 +544,24 @@ basically any work outside of the component.
 - callback cannot return promise (so cannot make it async)
 - it dependency array empty [] runs only on initial render
 
+```js
+    import {useState, useEffect} from "react";
+
+    const url = 'http://api.github.com/userss';
+
+    const FetchData = () => {
+        const [users, setUsers] = useState([]);
+
+        useEffect(() => {
+            const fetchData = async () => {
+                try {
+                    const response = await fetch(url);
+                    const users = await response.json();
+                } catch(error) {
+                    console.log(error)
+                }
+            };
+            fetchData();
+        }, []);
+    };
+```
