@@ -530,3 +530,8 @@ function Book() {
     }
 ```
 
+##### useEffect Basics #####
+
+useEffect is a hook in React that allows you to preform side 
+effects in function components. There is no need for urban dictionary - 
+basically any work outside of the component.
