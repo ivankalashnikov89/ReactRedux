@@ -510,7 +510,23 @@ function Book() {
     const displayAlex = () => {
         setName("Alex");
         setAge(37);
-        setHobby("Simpsons")
+        setHobby("Simpsons"   
+    }
+
+
+
+    const UseStateObject2 = () => {
+        const [person, setPerson] = useState({
+            name:"Ivan",
+            age:33,
+            hobby:"hockey"
+        });
+
+        const displayPerson = () => {
+            setPerson({name:"ALex", age:36, hobby:"Simpsons"});
+            //to change one parameter
+            setPerson({...person, name:"Alex"});
+        }
     }
 ```
 
