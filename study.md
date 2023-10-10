@@ -535,3 +535,12 @@ function Book() {
 useEffect is a hook in React that allows you to preform side 
 effects in function components. There is no need for urban dictionary - 
 basically any work outside of the component.
+
+-useEffect hook
+- accepts two arguments (second optional)
+- first argument - callback function
+- second argument - dependency array
+- by default runs on each render 
+- callback cannot return promise (so cannot make it async)
+- it dependency array empty [] runs only on initial render
+
