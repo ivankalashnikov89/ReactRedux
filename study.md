@@ -611,3 +611,75 @@ consists of few libraries
 
 - redux devtools
 - combine reducers
+
+##### React-redux #####
+
+connects our app to redux
+
+##### Setup Store #####
+
+- create store.js
+
+```js
+    import {configureStore} from "reduxjs/toolkit";
+
+    export const store = configureStore({
+        reducer:{},
+    });
+```
+
+##### Setup Provider #####
+
+- index.js
+
+```js
+    import React from "react";
+    import ReactDOM from "react-dom";
+    import App from './App';
+    //import store and provider
+    import { store } from './store';
+    import { Provider } from 'react-redux';
+
+    ReactDOM.render(
+        <React.StrictMode>
+            <Provider store = {store}>
+                <App />
+            </Provider>
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+```
+
+##### Setup Cart Slice #####
+
+```js
+    import { createSlice, createAsyncThunk } from 'reducjs/toolkit';
+
+    const initialState = {
+        cartItems:[],
+        amount:0,
+        total:0,
+        isLoading:true
+    };
+
+    const cartSlice = createSlice({
+        name:"cart",
+        initialState
+    });
+
+    export default cartSlice.reducer;
+
+```
+
+-store.js
+
+```js
+    import { configureStore } from "reduxjs/toolkit";
+    import cartReducer from ".../cartSlice";
+
+    export const store = configureStore({
+        reducer: {
+            cart: cartReducer,
+        },
+    });
+```
