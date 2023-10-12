@@ -652,12 +652,16 @@ connects our app to redux
 
 ##### Setup Cart Slice #####
 
+- cartSlice.js
+
 ```js
     import { createSlice, createAsyncThunk } from 'reducjs/toolkit';
 
     const initialState = {
         cartItems:[],
+        //!!!!!///
         amount:0,
+        //!!!!!//
         total:0,
         isLoading:true
     };
@@ -682,4 +686,22 @@ connects our app to redux
             cart: cartReducer,
         },
     });
+```
+
+-Navbar.js
+
+```js
+    import { useSelector } from "react-redux";
+
+    const Navbar = () => {
+        //Accessimng data from cartSlice!!!!
+        const {amount} = useSelector((store) => store.cart);
+        return (
+            .....
+            //Show data!!!!
+            <p> {amount}</p>
+            .....
+        );
+    };
+    export default Navbar;
 ```
