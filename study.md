@@ -736,3 +736,23 @@ connects our app to redux
 ```
 
 - CartContainer.js
+
+```js
+    import React from "react"
+    import { useDispatch, useSelector} from 'react-redux';
+
+    const CartContainer = () => {
+        const dispatch = useDispatch();
+
+        return (
+            <button
+                onClick = {() => {
+                    dispatch(clearCart());
+                }}
+            >ClearCart
+            </button>
+        )
+    };
+
+    export default CartContainer;
+```
