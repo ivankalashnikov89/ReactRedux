@@ -807,3 +807,87 @@ connects our app to redux
         };
     });
 ```
+
+##### MODAL #####
+
+- create components/Modal.js
+
+```js
+    const Modal = () => {
+        return (
+            <aside>
+                <div>
+                    <h4>Remove</h4>
+                    <div>
+                        <button 
+                            type='button'
+                            onClick = (()=> {
+                                dispatch(clearCart());
+                                dispatch(closeModal());
+                            })
+                        >
+                            Confirm
+                        </button>   
+                        <button 
+                            type='button'
+                            onClick = (()=> {
+                                dispatch(closeModal());
+                            })
+                        >
+                            Cancel
+                        </button>   
+                    </div>
+                </div>
+            </aside>
+        )
+    }
+```
+
+- App.js
+
+```js
+    return (
+        ...
+        <Modal />
+        ...
+    )
+```
+
+##### MODAL SLICE #####
+
+- create features/modalSlice.js
+
+```js
+    import { createSlice } from '@reduxjs/toolkit';
+    const initialState = {
+        isOpen:false,
+    };
+
+    const modalSlice = createSlice({
+        name:'modal',
+        initialState,
+        reducers: {
+            openModal: (state, action) => {
+                state.isOpen = true;
+            }, 
+            closeModal: (state, action) => {
+                state.isOpen = false;
+        },
+    });
+
+    export const {openModal, closeModal} = modalSlice.actions;
+    export default modalSlice.reducer;
+```
+
+-App.js
+
+```js
+    const { isOpen } = useSelector((state) => state.modal)
+
+    return (
+        <main>
+            {isOpen && <Modal />}
+            ....
+        </main>
+    )
+```
