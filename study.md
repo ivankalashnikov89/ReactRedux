@@ -909,3 +909,27 @@ connects our app to redux
             .catch((err) => console.log(error));
     })
 ```
+
+##### OPTIONS #####
+
+```sh
+    npm install axios
+```
+
+- cartSlice.js
+
+```js
+    export const getCartItems = createAsyncThunk(
+        'cart/getCartItems',
+        async (_, thunkAPI) => {
+            try {
+                console.log(thunkAPI.getState());
+
+                const resp = await axios(url);
+                return resp;
+            } catch (error) {
+                return thumkAPI.rejectWithValue('There was an error...');
+            };
+        };
+    );
+```
