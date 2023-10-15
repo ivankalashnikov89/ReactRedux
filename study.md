@@ -891,3 +891,21 @@ connects our app to redux
         </main>
     )
 ```
+
+##### ASYNC FUNCTIONALITY WITH createAsyncThunk #####
+
+- action type
+- callback function
+- lifecycle actions
+
+```js
+    import { createSlice, createAsyncThunk } from "@reduxjs/toolkt"
+
+    const url = "some url"
+
+    export const getCartItem = createAsyncThunk('cart/getCartItem', () => {
+        return fetch(url)
+            .then((resp) => resp.json())
+            .catch((err) => console.log(error));
+    })
+```
