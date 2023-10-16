@@ -1033,3 +1033,83 @@ connects our app to redux
 
     export default App
 ```
+
+##### DISPATCHING ACTIONS THROUGH COMPONENTS #####
+
+- App.js 
+
+```js
+    import React, { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+function App() {
+    const rooms = useSelector(state => state.rooms)
+    const dispatch = useDispatch()
+    const [roomId, setRoomId] = useState(4)
+    const [value, setValue] = useState('')
+    
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        setRoomId({ roomId: roomId + 1 })
+        dispatch({
+            type: 'ADD_ROOM',
+            payload: { id: roomId, type: value}
+        })
+    }
+    
+    return (
+        <>
+            <div className="home-image"></div>
+            <h1>Let's learn about homes!</h1>
+            <form onSubmit={handleSubmit}>
+                <input 
+                    type="text" 
+                    value={value}
+                    onChange={event => setValue(event.target.value)}
+                />
+                <input type="submit" value="Add a room"/>
+            </form>
+            <ul>
+                {rooms.map(room => (
+                    <li key={room.id}>{room.id}{room.type}</li>
+                ))}
+            </ul>
+        </>
+    )
+}
+
+export default App
+```
+
+- index.js
+
+```js
+    import { createStore } from 'redux'
+
+const house = {
+    type: 'condo',
+    rooms: [
+        {id: 1, type: 'Living Room'},
+        {id: 2, type: 'Dining Room'},
+        {id: 3, type: 'Bathroom'}
+    ],
+    doorsOpen: {
+        backDoor: false,
+        frontDoor: true
+    }
+}
+
+const reducer = (state = house, action) => {
+    if (action.type === 'ADD_ROOM') {
+        return Object.assign({}, state, {
+            rooms: state.rooms.concat(action.payload)
+        })
+    }
+    return state
+}
+
+const store = createStore(reducer)
+
+export default store
+
+```
