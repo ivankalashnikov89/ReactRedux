@@ -933,3 +933,29 @@ connects our app to redux
         };
     );
 ```
+
+
+
+
+##### SCRIMBA REDUX #####
+
+```js
+    import { createStore } from 'redux'
+
+    const house = {
+        type:'condo',
+        rooms:[],
+        doorsOpen: {
+            backDoor:false,
+            frontDoor:true
+        }
+    }
+
+    const reducer = (state = house, action) => {
+        return state;
+    }
+
+    const store = createStore();
+
+    export default store;
+```
