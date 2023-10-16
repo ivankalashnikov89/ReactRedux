@@ -990,3 +990,46 @@ connects our app to redux
     export default store;
 ```
 
+##### USING REDUX WITH REACT #####
+
+- index.js
+
+```js
+    import React from 'react'
+    import ReactDOM from 'react-dom'
+    import App from './App'
+
+    import { Provider } from 'react-redux'
+    import store from './store/index'
+
+    ReactDOM.render(
+    <Provider store={store}>
+        <App />
+    </Provider>, 
+    document.getElementById('root')
+)
+```
+
+- App.js
+
+```js
+    import React from 'react'
+    import { useSelector } from 'react-redux'
+
+    function App() {
+        const rooms = useSelector(state => state.rooms)
+        return (
+            <>
+                <div className="home-image"></div>
+                <h1>Let's learn about homes!</h1>
+                <ul>
+                    {rooms.map(room => (
+                        <li key={room.id}>{room.type}</li>
+                    ))}
+                </ul>
+            </>
+        )
+    }
+
+    export default App
+```
