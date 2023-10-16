@@ -939,6 +939,8 @@ connects our app to redux
 
 ##### SCRIMBA REDUX #####
 
+##### REDUCERS #####    
+
 ```js
     import { createStore } from 'redux'
 
@@ -959,3 +961,32 @@ connects our app to redux
 
     export default store;
 ```
+
+##### ACTIONS #####
+
+```js
+    import { createStore } from 'redux'
+
+    const house = {
+        type:'condo',
+        rooms:[],
+        doorsOpen: {
+            backDoor:false,
+            frontDoor:true
+        }
+    }
+
+    const reducer = (state = house, action) => {
+        if(action.type === "ADD_ROOM") {
+            return Object.assign({}, state, {
+                rooms:state.rooms.concat(action.payload)
+            })
+        }
+        return state;
+    }
+
+    const store = createStore();
+
+    export default store;
+```
+
