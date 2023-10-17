@@ -1,5 +1,20 @@
 ##### MY REACT AND REDUC TOOLKIT JOURNEY
 
+##### HOW DOES REDUX WORK #####
+
+Redux enables you to maintain a single centrelized 
+store that manages the state ot your entire app.
+All components in your app can access this store and 
+update or retrieve data from it as needed.
+
+The key components that enable this centrelized approach 
+to state management are:
+- Store
+- Actions
+- Dispatch
+- Reducers
+
+
 ##### FIRST COMPONENT #####
 
 ```js
