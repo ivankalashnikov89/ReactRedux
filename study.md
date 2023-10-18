@@ -97,8 +97,34 @@ part of the company's data.
 
 ##### REDUCERS #####
 
+In Redux, a reducer is a function that takes in the current
+state of an app and an action as arguments, and returns a 
+new state based on the action.
 
+EXAMPLE
 
+```js
+    const initialState = {
+        count: 0;
+    };
+
+    function counterReducer(state = initialState, action) {
+        switch(action.type) {
+            case 'INCREMENT':
+                return {...state, count:state.count + 1};
+            case 'DECREMENT':
+                return {...state, count:state.count - 1};
+            default:
+                return state;
+        };
+    };
+```
+In the above code, we have a simple reducer called 
+'counterReducer' that manages the state of a count 
+variable. It takes in two arguments : state and action.
+The state argument represents the current state of your 
+app, while the action argument represents the action 
+dispatched to modify the state.
 
 ##### FIRST COMPONENT #####
 
