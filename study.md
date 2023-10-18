@@ -60,6 +60,43 @@ EXAMPLE
         }
     }
 ```
+Note that to create actions, we use action creators. 
+Action creators are functions that create and return action 
+objects.
+
+EXAMPLE
+
+```js
+    function addTask(taksText) {
+        return {
+            type: 'ADD_TASK',
+            payload: {
+                id:1,
+                text:"text",
+                completed:false
+            }
+        }
+    }
+```
+
+##### DISPATCH ##### 
+
+In Redux, dispatch is a function provided by the store 
+that allows you to send an action to update the state of
+your app. When you call 'dispatch', the store runs as
+action through all of the available reducers, which in 
+turn update the state accordingly.
+
+You can think of 'dispatch' as a mail carrier who 
+delivers mail to different departments in a large company.
+Just like how the mail carrier delivers mail to different
+departments, 'dispatch' delivers actions to various reducers
+in your Redux store. Each reducer is like a department in
+the company that processes the mail and updates its own 
+part of the company's data.
+
+##### REDUCERS #####
+
 
 
 
