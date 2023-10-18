@@ -14,6 +14,54 @@ to state management are:
 - Dispatch
 - Reducers
 
+##### THE STORE #####
+
+The redux store is like a giant container that holds all
+the data for your app.
+
+Think of the store as a box with different compartments 
+for different data types. You can store any data you want
+in these compartments, and it can hold various kinds of 
+data, such as strings, numbers, arrays, objects, and even 
+functions.
+
+Also, the store is the single source of truth for your 
+app's state. This means that any component in your app can
+access it to retrieve and update data.
+
+##### ACTIONS #####
+
+An action is an object that describes what changes need
+to made to the state of your app. It sends data from your 
+app to the Redux store and serves as the only way to
+update the store.
+
+And action must habe a 'type' property describing the 
+action being performed. This 'type' property is 
+typically defined as a string constant to ensure 
+consistency and avoid typos.
+
+In addition to the 'type' property, an action can have
+a 'payload' property. The 'payload' property represents
+the data that provides additional information about the
+action being performed.For example, if an action type 
+is ADD_TASK, the payload might be an object containing
+a new task item's "id", "text" and "compeleted status".
+
+EXAMPLE
+
+```JS
+    {
+        type: 'ADD_TASK',
+        payload: {
+            id:1,
+            text:"text",
+            completed:false
+        }
+    }
+```
+
+
 
 ##### FIRST COMPONENT #####
 
