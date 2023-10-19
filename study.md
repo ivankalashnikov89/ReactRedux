@@ -166,6 +166,58 @@ combines all the individual reducers in the app. In contrast,
 the taskReducer.js file is one of the individual reducers
 that will be combined in the root reducer.
 
+- index.js 
+
+```js
+    import taskReducer from './taskReducer'
+    import { combineReducers } from 'redux'
+
+    const rootReducer = combineReducers({
+        tasks:taskReducer,
+    });
+
+    export default rootReducer;
+```
+
+    In the above index.js file, we use the combineReducers 
+function to combine all the individual reducers into a single
+root reducer. In this case, we only have one reducer
+(taskReducer), so we pass it in as an argument to 
+combineReducers.
+
+    The resulting combined reducer is then exported so that 
+other files in the app can import and use it to create the
+store:
+
+-taskReducer.js
+
+```js
+    const inititalState = {
+        tasks: []
+    };
+
+    const taskReducer = (state = initialState, action) => {
+        switch(action.type) {
+            case "ADD_TASK":
+                return {
+                    ...state,
+                    tasks: [...state.tasks, action.payload]
+                };
+            case "DELETE_TASK":
+                return {
+                    ...state,
+                    tasks: state.tasks.filter(
+                        task => task.id !== action.payload
+                    )
+                };
+            default:
+                return state;
+        }
+    }
+
+    export default rootReducer;
+```
+
 ##### FIRST COMPONENT #####
 
 ```js
