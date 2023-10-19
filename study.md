@@ -296,6 +296,33 @@ the 'App'.
         )
 ```
 
+##### HOW TO SET UP REDUX ACTIONS #####
+
+    Actions represent something that happened in the app.
+    To create the actions, create a new folder called 'actions'
+in the 'src' directory and then create a new file called
+'index.js'. This file will contain all of the action creators
+for our app.
+
+```js
+    export default addToDo = (text) => {
+        return {
+            type:'ADD_TASK,
+            payload: {
+                id:new Date().getTime(),
+                text:text
+            },
+        };
+    };
+
+    export const deleteToDd = (id) => {
+        return {
+            type:'DELETE_TASK',
+            payload:id
+        };
+    };
+```
+
 ##### FIRST COMPONENT #####
 
 ```js
