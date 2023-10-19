@@ -231,8 +231,70 @@ with a new task added to the tasks array. And if the action
 type is DELETE_TASK, the reducer returns a new state object with
 the current tasks filtered to remove the taks with the specified "id".
 
+##### HOW TO CREATE THE REDUX STORE #####
 
+-store.js
 
+```js
+    import {createStore, applyMiddleware } from 'redux'
+    import thunk from 'redux-thunk'
+    import { composeWithDevTools } from 'redux-devtools-extension';
+
+    import taskReducer from './taskReducer'
+
+    const store = createStore(
+        taskReducer,
+        composeWithDevTools(applyMiddleware(thunk))
+    );
+
+    export default store;
+```
+    The code above sets up a Redux store by creating a new 
+instance of the store using the 'createStore' function. 
+Then, the rootReducer - which combines all the app's 
+reducers into a single reducer - is passed as an argument 
+to 'createStore'.
+
+    The 'redux-thunk' library allows you to write async actions,
+while the 'redux-devtools-extension' library enables you to use
+the Resux DevTools browser extension to debug and inspect the state
+and actions in the store.
+
+    Finally, we export the store so we can use it in our app.
+We use the 'composeWithDevTools' function to enhance the 
+store with the ability to use the Redux DevTools extension, and
+the 'applyMiddleware' function to apply the thunk middleware to 
+the store.
+
+##### HOW TO CONNECT THE REDUX STORE TO THE APP #####
+
+    To connect the Redux store to the ToDo app, we need to use
+the 'Provider' component from the 'react-redux' library.
+
+    First, we import the 'Provider' function and the Redux store
+we created into our 'main.jsx'. Then, we wrap our 'App' component
+with the 'Provider' function and pass the 'store' as a prop. This
+makes the Redux store available to all the components inside
+the 'App'.
+
+```js
+    import React from 'react'
+    import ReactDOM from 'react-dom/client'
+    import App from './App'
+    import './index.css'
+
+    import { Provider } from 'react-redux'
+    import store from './store'
+
+    ReactDOM.createRoot(document.getElementById('root')).
+        render(
+            <React.StrictMode>
+                <Provider store = {store}>
+                    <App />
+                </Provider>
+            </React.StrictMode>
+        )
+```
 
 ##### FIRST COMPONENT #####
 
