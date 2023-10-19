@@ -218,6 +218,22 @@ store:
     export default rootReducer;
 ```
 
+    Inside the above taskReducer.js file, we define a reducer
+function that takes two arguments: state and action. The state
+argument represents the current state of the app, while the 
+action argument represents the action being dispatched to
+update the state.
+
+    The 'switch' statement insife the reducer handles different
+cases based on the "type" of the action. For example, if the
+action type is ADD_TASK, the reducer returns a new state object
+with a new task added to the tasks array. And if the action 
+type is DELETE_TASK, the reducer returns a new state object with
+the current tasks filtered to remove the taks with the specified "id".
+
+
+
+
 ##### FIRST COMPONENT #####
 
 ```js
