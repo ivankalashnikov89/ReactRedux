@@ -126,6 +126,46 @@ The state argument represents the current state of your
 app, while the action argument represents the action 
 dispatched to modify the state.
 
+##### REAL APP IMPLEMENTATION #####
+
+##### HOW TO SET UP THE PROJECT #####
+
+```sh
+    npm create vite@latest project_name -- --template react
+    cd project_name
+    npm install
+```
+
+##### HOW TO INSTALL REDUX #####
+
+    Redux requires a few dependencies fot its operations,namely:
+        REDUX. The core library enables the redux architecture.
+        REACT REDUX. Simplifies connecting your React 
+            components to the Redux store.
+        REDUX THUNK. Allows you to write async logic in 
+            your Redux actions.
+        REDUX DEVTOOLS EXTENSION. Connects your Redux app to
+            Redux DevTools
+
+```sh
+    npm install \
+    redux\
+    react-redux\
+    redux-thunk\
+    redux-devtools-extension
+```
+
+##### HOW TO SET UP REDUCERS ##### 
+
+    in the 'src' directory, create a new folder called
+'reducers', and inside that folder, create two new files:
+index.js and taskReducer.js
+
+    The index.js file represents the root reducer, which
+combines all the individual reducers in the app. In contrast, 
+the taskReducer.js file is one of the individual reducers
+that will be combined in the root reducer.
+
 ##### FIRST COMPONENT #####
 
 ```js
