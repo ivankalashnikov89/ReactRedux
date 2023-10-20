@@ -397,6 +397,22 @@ proceed to write code for 'Task.jsx'.
     export default Task;
 ```
 
+    In the code above, we created a component consisting of an
+input field and a button. When a user clicks on the 'Add task'
+button, the 'addNewTask' function is executed. This function 
+uses the 'useRef' hook to obtain the input field's value, 
+removes any leading or trailing whitespaces, and then dispatched
+the 'addToDo' action with the new taks as the payload.
+
+    Now, let's move on to the 'TaskList.jsx' component, 
+responsible for rendering the list ot tasks and handling taks
+deletions. To achieve this, we need to import the following:
+    -The 'useSelector hook' provides access to the state from 
+the Redux store;
+    -The 'deleteToDo action, is responsible for removing a task
+from the list of tasks in the Redux store;
+
+
 
 ##### FIRST COMPONENT #####
 
