@@ -343,6 +343,60 @@ using the 'dispatch()' method, which will trigger the
 corresponding reducer function to update the app state 
 accordingly.
 
+##### HOW TO DISPATCH ACTIONS #####
+
+    Let's create a new folder named 'components' inside the 'src'
+directory. Inside this folder, we will create two new files:
+'Task.jsx' and 'TaskList.jsx'.
+
+    The 'Task.jsx' component will be responsible for adding tasks. 
+But before we proceed, we need to import the following into 
+the fiie;
+    -addToDo action: To add new tasks to the state;
+    -useDispatch hook: To dispatch the 'addToDo' action;
+    -useRef: Allows us to obtain a reference to HTML elements.
+
+```js
+    import { useRef } from 'react';
+    import { useDispatch } from 'react-redux';
+    import { addToDo } from '../actions';
+```
+
+    Once we have imported these necessary components, we can
+proceed to write code for 'Task.jsx'.
+
+```js
+    const Task =() => {
+        const dispatch = useDispatch();
+        const inputRef = useRef(null);
+
+        function addNewTask() {
+            const task = inputRef.current.value.trim();
+            if(task !== "") {
+                dispatch(addToDo(task));
+                input.current.value = "";
+            }
+        }
+
+        retiurn (
+            <div>
+                <div>
+                    <input 
+                        type = "text"
+                        placeholder = "text"
+                        ref = {inputRef}
+                    />
+                    <button onClick = {addNewTask}>
+                        New task
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
+    export default Task;
+```
+
 
 ##### FIRST COMPONENT #####
 
