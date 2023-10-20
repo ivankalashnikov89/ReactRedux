@@ -323,6 +323,27 @@ for our app.
     };
 ```
 
+    The above code exports two action creators:addTodDo and
+deleteToDo. These functions return an object with a type 
+property that describes the action that has occured.
+
+    In the case of 'addToDo', the 'type' property is set to
+'ADD_TASK', indicating that a new task has been added. The 
+'payload' property contains an object with the new task's 'id'
+and 'text' values. The 'id' is generated using the
+'newDate().getTime() method creates a unique identifier 
+based on the current timestamp.
+
+    In the case of 'deleteToDo', the 'type' property is set to
+'DELETE_TASK', indicating that a taks has been deleted. The 
+'payload' property contains the 'id' of the task to be deleted.
+
+    These action creators can be dispatched to the Redux store
+using the 'dispatch()' method, which will trigger the 
+corresponding reducer function to update the app state 
+accordingly.
+
+
 ##### FIRST COMPONENT #####
 
 ```js
