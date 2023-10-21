@@ -485,6 +485,28 @@ render them.
 
 ##### STYLING #####
 
+
+
+##### HOW TO USE REDUX TOOLKIT #####
+
+# ADVANTAGES OF REDUX TOOLKIT #
+    Redux Toolkit provides several advantages over traditional Redux
+        - It is easier to set up and requires fewer dependencies;
+        - Reduces boilerplate code by allowing the creation of a single 
+          file known as 'slice' that combines actions and reducers.
+        - Provides sensible defaults for commonly used features, such
+          as Redux Thunk and Redux DevTools. This means that you don't 
+          have to spend time to configuring these features yourself,
+          as they are already built into Redux Toolkit.
+        - It uses the immer library under the hood, which enables 
+          direct state mutation and eliminates the need for manually
+          copying the state '{...state}' with every reducer.
+
+##### HOW TO SET UP REDUX TOOLKIT ##### 
+
+
+
+
 ##### FIRST COMPONENT #####
 
 ```js
