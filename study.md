@@ -504,6 +504,35 @@ render them.
 
 ##### HOW TO SET UP REDUX TOOLKIT ##### 
 
+    To use Redux Toolkit in your React App, you need to install
+two dependencies:@reduxjs/toolkit and react-redux
+
+    The '@reduxjs/toolkit' package provides the necessary tools to 
+simplify Redux development, while 'react-redux' is needed to 
+connect your Redux store to your React components.
+
+```sh
+    npm install @reduxjs/toolkit react-redux
+```
+
+##### HOW TO CREATE A SLICE #####
+
+    Once you have installed the needed dependencies, create a new
+'slice' using the 'createSlice' function. A slice is a portion of 
+the Redux store that is responsible for managing a specific piece 
+of state.
+
+    Think of the Redux store as a cake, where each slice represents
+a specific piece of data in the store. By creating a slice, you
+can define the behaviour of the state in response to particular actions 
+using reducer function.
+
+    To create a slice to manage our ToDo app, crete a new file 
+named 'src/features/todo/todoSlice.js' and add the following code.
+
+```js
+    
+```
 
 
 
