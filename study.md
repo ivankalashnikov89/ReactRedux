@@ -412,6 +412,17 @@ the Redux store;
     -The 'deleteToDo action, is responsible for removing a task
 from the list of tasks in the Redux store;
 
+```js
+    import { useSelector, useDispatch } from 'react-redux'
+    import { deleteToDO } from './dispatch'
+```
+
+    We will now write code for 'TaskList.jsx' that maps over
+the tasks array and renders each taks:
+
+```js
+    
+```
 
 
 ##### FIRST COMPONENT #####
