@@ -421,9 +421,69 @@ from the list of tasks in the Redux store;
 the tasks array and renders each taks:
 
 ```js
-    
+    import React from 'react'
+    import { useSelector, useDispatch } from 'react-redux'
+    import { deleteToDO } from './dispatch'
+
+    const TaskList = () => {
+        const tasks = useSelector((state) => state.tasks);
+        const dispatch = useDispatch();
+
+        const handleDelete = (id) => {
+            dispatch(deleteToDo(id));
+        };
+
+        return (
+            <div>
+                <div>
+                    <h3>Your tasks:</h3>
+                    <ul>
+                        {tasks.map((task) => {
+                            <li key = {task.id}>
+                                {task.text}
+                                <button
+                                    onClick = {()=>handleDelete(task.id)}
+                                >
+                                    Delete
+                                </button>
+                            </li>
+                        })}
+                    </ul>
+                </div>
+            </div>
+        )
+    }
+
+    export default TaskList;
 ```
 
+    Here, the component loops over each task in the tasks array and
+displays text and a delete button. When the user clicks the delete
+button, the 'handleDelete' function is called, dispatching the 
+'deleteToDo' action with the task's 'id' as the payload.
+
+    Finally, import the component into your 'App.jsx' file and 
+render them.
+
+-App.jsx
+
+```js
+    import Task from './Task'
+    import TaskList from './TaskList'
+
+    function App() {
+        return (
+            <div>
+                <Task />
+                <TaskList />
+            </div>
+        );
+    }
+
+    export default App;
+```
+
+##### STYLING #####
 
 ##### FIRST COMPONENT #####
 
