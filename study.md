@@ -560,7 +560,100 @@ named 'src/features/todo/todoSlice.js' and add the following code.
     The above code defines a slice named 'todoSlice', with an 
 'initialState' object that contains an empty array of tasks.
 
+    The 'reducers' object defines two reducer functions: 'addTask' and 
+'deleteTask'. 'addTask' pushes a new task object into the 'tasks' array, 
+and 'deleteTask' removes a task from the 'tasks' array based on its 
+'id' property.
 
+    The 'createSlice' function automatically generates action creators
+and action types based on the names of the reducer functions you 
+provide. So you don't have to define the action creators yourself
+manually.
+
+    The 'export' statement exports the generated action creators,
+which can be used in other parts of your app to dispatch actions
+to the slice.
+
+    And finally, the 'todoSlice.reducer' function handles all
+actions automatically generated based on the reducer objects provided
+to the 'createSlice' function. By exporting it as the default, you
+can combine it with other reducers in your app to create a complete
+Redux store.
+
+##### HOW TO SET UP REDUX STORE #####
+
+    Create a Redux store is much simpler with Redux Toolkit.
+
+    The most basic way to create a store is to use the 
+'configureStore()' function, which automatically generates a root 
+reducer for you by combining all the reducers defined in your app.
+
+    To create a store for the app, add a file named 'src/store.js'
+and add the following code:
+
+```js
+    import { configureStore } from '@reduxjs/toolkit'
+    import todoReducer from './todoSlice'
+
+    const store = configureStore({
+        reducer: {
+            todo:todoReducer,,
+        },
+    }),
+
+    export default store;
+```
+
+    In this example, we first import the 'configureStore' function 
+form the '@reduxjs/toolkit' package, and the 'todoReducer' function
+from a separate file.
+
+    Then, we create a 'store' object by calling 'configureStore' and
+passing it an object with a 'reducer' property. The 'reducer' 
+property is an object that maps reducer slice names to their 
+corresponding reducer function. In this case, we have one reducer
+slice called 'todo', and its corresponding reducer function is 
+'todoReducer'.
+
+    Finally, we export the 'store' object so that it can be imported
+and used in other parts of the app.
+
+##### HOW TO PROVIDE THE REDUX STORE TO REACT #####
+
+    To make your Redux store available to the React components is your
+app, import the Provider component from the 'react-redux' library and
+wrap your root component (usually <App />) with it.
+
+    The Provider component takes in the store as a prop and passes
+it down to all the child components that need to access to it.
+
+```js
+    import React from 'react'
+    import ReactDOM from 'react-dom'
+    import App from './App.jsx'
+    import './index.css'
+
+    import store from './store.js'
+    impor { Provider } from 'react-redux';
+
+    ReactDOM.createRoot(document.getElementById('root')).render(
+        <React.StrictMode> 
+            <Provider store = {store}>
+                <App />
+            </Provider>
+        </React.StrictMode>
+    );
+```
+
+##### CREATE COMPONENTS #####
+
+    You can now create React components such as 'Task.jsx' and 
+'TaskList.jsx' that use the 'useSelector' hook to access the current
+state from the store. Similarly, you can use the 'useDispatch()' hook
+to dispatch actions to update the store, just as you did in plain Redux.
+
+    You should now have the same app as before with a few updates from
+Redux Toolkit and a lot less code to maintain.
 
 ##### FIRST COMPONENT #####
 
