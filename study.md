@@ -1124,7 +1124,7 @@ function Book() {
     }
 ```
 
-##### useState Basics #####
+##### useState BASICS #####
 
 - useState Hook
 - returns an array with two elements: current state value, and a function that we can use to update the state
@@ -1143,7 +1143,7 @@ function Book() {
     <button onClick = {handleClick}>Click me</button>
 ```
 
-##### General Rules of Hooks #####
+##### GENERAL RULES OF HOOKS #####
 
 - starts with 'use' 
 - component must be uppercase
@@ -1153,7 +1153,7 @@ function Book() {
 
 ##### useState with Array #####
 
-##### useState with Object #####
+##### useState WITH OBJECT #####
 
 ```js
     const UseStateObject = () => {
@@ -1185,7 +1185,7 @@ function Book() {
     }
 ```
 
-##### useEffect Basics #####
+##### useEffect BASICS #####
 
 useEffect is a hook in React that allows you to preform side 
 effects in function components. There is no need for urban dictionary - 
@@ -1224,11 +1224,6 @@ basically any work outside of the component.
 
 
 
-
-
-
-
-
 ##### REDUX TOOLKIT #####
 
 ##### DOCS #####
@@ -1262,16 +1257,16 @@ consists of few libraries
     - redux-thunk(handles async actions)
     - reselect (simplifies reducer functions)
 
-##### Extras #####
+##### EXTRAS #####
 
 - redux devtools
 - combine reducers
 
-##### React-redux #####
+##### REACT-REDUX #####
 
 connects our app to redux
 
-##### Setup Store #####
+##### SETUP STORE #####
 
 - create store.js
 
@@ -1283,7 +1278,7 @@ connects our app to redux
     });
 ```
 
-##### Setup Provider #####
+##### SETUP PROVIDER #####
 
 - index.js
 
@@ -1305,7 +1300,7 @@ connects our app to redux
     );
 ```
 
-##### Setup Cart Slice #####
+##### SETUP CART SLICE #####
 
 - cartSlice.js
 
@@ -1361,7 +1356,7 @@ connects our app to redux
     export default Navbar;
 ```
 
-##### First Reducer #####
+##### FIRST REDUCER #####
 
 - cartSlice.js
 - Immer Library
@@ -1412,7 +1407,7 @@ connects our app to redux
     export default CartContainer;
 ```
 
-##### Remove, Increase, Decrease #####
+##### REMOVE, INCREASE, DECREASE #####
 
 - cartSlice.js
 
