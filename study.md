@@ -1055,11 +1055,11 @@ function Book() {
 
 - Initial setup
 - Create getBook function in bookList
-- accepts id as an argument and finds the book
-- pass function down to Book Component and invoke on the button click
-- in the Book Component destructure id and function 
-- invoke the function when user clicks the button, pass the id
-- the goal: you should see the same book in the console
+- Accepts id as an argument and finds the book
+- Pass function down to Book Component and invoke on the button click
+- In the Book Component destructure id and function 
+- Invoke the function when user clicks the button, pass the id
+- The goal: you should see the same book in the console
 
 ```js
     const BookList = () => {
