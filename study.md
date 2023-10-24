@@ -2,12 +2,12 @@
 
 ##### HOW DOES REDUX WORK #####
 
-Redux enables you to maintain a single centrelized 
+    Redux enables you to maintain a single centrelized 
 store that manages the state ot your entire app.
 All components in your app can access this store and 
 update or retrieve data from it as needed.
 
-The key components that enable this centrelized approach 
+    The key components that enable this centrelized approach 
 to state management are:
 - Store
 - Actions
@@ -16,16 +16,16 @@ to state management are:
 
 ##### THE STORE #####
 
-The redux store is like a giant container that holds all
+    The redux store is like a giant container that holds all
 the data for your app.
 
-Think of the store as a box with different compartments 
+    Think of the store as a box with different compartments 
 for different data types. You can store any data you want
 in these compartments, and it can hold various kinds of 
 data, such as strings, numbers, arrays, objects, and even 
 functions.
 
-Also, the store is the single source of truth for your 
+    Also, the store is the single source of truth for your 
 app's state. This means that any component in your app can
 access it to retrieve and update data.
 
