@@ -788,12 +788,12 @@ function Book() {
 - setup props
 
 ```js 
-    const firstBook = {
-        author:"JRR Tolkien",
+    const firstBook = {     <------
+        author:"JRR Tolkien",   <------
         title:"Silmarillion"
     };
-    const secondBook = {
-        author:"J Rowling",
+    const secondBook = {      <------
+        author:"J Rowling",      <------
         title:"Harry Potter"
     }
 
@@ -801,11 +801,11 @@ function Book() {
         return (
             <section className = "className">
                 <Book
-                    author = {firstBook.author}
+                    author = {firstBook.author}    <------
                     title = {firstBook.title}
                 />
                 <Book
-                    author = {srcondBook.author}
+                    author = {srcondBook.author}    <------ 
                     title = {secondBook.title}
                 />
             </section>
