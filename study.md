@@ -1642,6 +1642,8 @@ connects our app to redux
 
 ##### USING REDUX WITH REACT #####
 
+    To connect React and Redux we should use <Provider>
+
 - index.js
 
 ```js
@@ -1649,13 +1651,17 @@ connects our app to redux
     import ReactDOM from 'react-dom'
     import App from './App'
 
+    ///////////////////////////////////////
     import { Provider } from 'react-redux'
+    ///////////////////////////////////////
     import store from './store/index'
 
     ReactDOM.render(
+    ///////////////////////////////////////
     <Provider store={store}>
         <App />
     </Provider>, 
+    //////////////////////////////////////
     document.getElementById('root')
 )
 ```
